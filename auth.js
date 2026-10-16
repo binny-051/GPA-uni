@@ -252,7 +252,7 @@ function xuLyDangNhap() {
         hienThongBaoAuth("Đăng nhập thành công! Chào mừng " + taiKhoanKhop.hoTen + " quay trở lại.", false);
 
         setTimeout(function () {
-            window.location.href = "gpa-uni.html";
+            window.location.href = "index.html";
         }, 600);
     } catch (loi) {
         hienThongBaoAuth("Trình duyệt đang chặn bộ nhớ lưu trữ phiên đăng nhập.", true);
