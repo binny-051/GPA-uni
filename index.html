@@ -1,0 +1,268 @@
+  <!DOCTYPE html>
+  <html lang="vi">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>GPA Uni - Tính điểm GPA cho sinh viên</title>
+      <link rel="stylesheet" href="gpa-uni.css">
+      <link rel="stylesheet" href="auth.css">
+      <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+      <link rel="manifest" href="webmanifest.json">
+  </head>
+  <body>
+      <aside class="thanh-ben" id="thanh-ben">
+          <a class="thuong-hieu" href="#trang-chu" onclick="moTrang('trang-chu'); return false;">
+              <span class="logo-hinh" aria-hidden="true">G</span>
+              <span><strong>GPA <b>Uni</b></strong><small>ĐIỂM SỐ LÀ CHUYỆN NHỎ <br> MỤC TIÊU LÀ PHẢI LỚN.</small></span>
+          </a>
+          <p class="nhan-menu">GÓC HỌC TẬP CỦA BẠN</p>
+          <nav id="menu" aria-label="Menu chính">
+              <a id="menu-trang-chu" class="dang-chon" href="#trang-chu" onclick="moTrang('trang-chu'); return false;"><span class="bieu-tuong" aria-hidden="true">𖤘</span>Trang chủ</a>
+              <a id="menu-tinh-gpa" href="#tinh-gpa" onclick="moTrang('tinh-gpa'); return false;"><span class="bieu-tuong" aria-hidden="true">▦</span>Tính GPA kỳ</a>
+              <a id="menu-tich-luy" href="#tich-luy" onclick="moTrang('tich-luy'); return false;"><span class="bieu-tuong" aria-hidden="true">▥</span>GPA tích lũy</a>
+              <a id="menu-muc-tieu" href="#muc-tieu" onclick="moTrang('muc-tieu'); return false;"><span class="bieu-tuong" aria-hidden="true">◎</span>Mục tiêu GPA</a>
+              <hr>
+              <a id="menu-thang-diem" href="#thang-diem" onclick="moTrang('thang-diem'); return false;"><span class="bieu-tuong" aria-hidden="true">▤</span>Quy chế &amp; Thang điểm</a>
+              <a id="menu-huong-dan" href="#huong-dan" onclick="moTrang('huong-dan'); return false;"><span class="bieu-tuong" aria-hidden="true">?</span>Hướng dẫn</a>
+              <a id="menu-gop-y" href="#gop-y" onclick="moTrang('gop-y'); return false;"><span class="bieu-tuong" aria-hidden="true">✉</span>Liên hệ / Góp ý</a>
+          </nav>
+          <div class="cuoi-menu">
+              <div class="the-luu-nho">
+                  <span class="bieu-tuong" aria-hidden="true">🔒</span> <em>Bạn có biết?</em>
+                  <h3>Dữ liệu của bạn hoàn toàn bảo mật!</h3>
+                  <p>Lưu học kỳ trên thiết bị.<br>Không cần tài khoản để bắt đầu.</p>
+                  <a href="#luu-du-lieu" onclick="moLuuDuLieu(); return false;">Quản lý dữ liệu →</a>
+              </div>
+              <p class="ban-quyen">GPA Uni © 2026 <span>Bản cơ bản</span></p>
+          </div>
+      </aside>
+
+      <div class="khung-trang">
+          <header class="thanh-tren">
+              <div class="duong-dan">
+                  <button type="button" class="nut-menu" id="nut-menu" onclick="batTatMenu()" aria-label="Mở hoặc đóng menu" aria-expanded="false" aria-controls="thanh-ben">☰</button>
+                  <span class="ten-khong-gian">Không gian học tập</span><span class="dau-chia">/</span><strong id="ten-trang">Trang chủ</strong>
+              </div>
+              <div class="trang-thai"><span class="cham-xanh"></span>Lưu riêng trên thiết bị <span class="anh-dai-dien" aria-hidden="true">SV</span></div>
+          </header>
+
+          <main id="noi-dung-chinh" tabindex="-1">
+              <section id="trang-chu" class="trang">
+                  <div class="gioi-thieu">
+                      <div class="loi-chao">
+                          <p class="dong-nho">MỖI HỌC KỲ, MỘT BƯỚC TIẾN.</p>
+                          <h1>Hiểu điểm số hôm nay,<br><span>chủ động mục tiêu ngày mai.</span></h1>
+                          <p>Tính GPA học kỳ, theo dõi điểm tích lũy và lên kế hoạch đạt mục tiêu học tập.</p>
+                          <div class="nhom-nut">
+                              <a class="nut" href="#tinh-gpa" onclick="moTrang('tinh-gpa'); return false;">Tính GPA ngay <span aria-hidden="true">→</span></a>
+                              <a class="nut nut-phu" href="#muc-tieu" onclick="moTrang('muc-tieu'); return false;">Lập mục tiêu GPA</a>
+                          </div>
+                      </div>
+                      <div class="minh-hoa" aria-hidden="true">
+                          <div class="vong-tron"></div>
+                          <div class="the-minh-hoa">
+                              <p>HÀNH TRÌNH CỦA BẠN</p>
+                              <h3>Hôm nay cố gắng,<br> ngày mai tiến xa.</h3>
+                              <div class="cac-cot"><span class="cot-1"></span><span class="cot-2"></span><span class="cot-3"></span><span class="cot-4"></span><span class="cot-5"></span><span class="cot-6"></span></div>
+                              <small>Bắt đầu từ mục tiêu của riêng bạn</small>
+                          </div>
+                          <div class="nhan-minh-hoa"><span>✓</span> Chủ động hơn mỗi học kỳ.</div>
+                      </div>
+                  </div>
+                  <div class="cac-cong-cu">
+                      <a class="the-cong-cu" href="#tinh-gpa" onclick="moTrang('tinh-gpa'); return false;"><span class="o-bieu-tuong" aria-hidden="true">▦</span><span><strong>Tính GPA kỳ</strong><small>Từng môn, từng tín chỉ.</small></span><b aria-hidden="true">→</b></a>
+                      <a class="the-cong-cu" href="#tich-luy" onclick="moTrang('tich-luy'); return false;"><span class="o-bieu-tuong xanh-la" aria-hidden="true">▥</span><span><strong>GPA tích lũy</strong><small>Nhìn lại cả hành trình.</small></span><b aria-hidden="true">→</b></a>
+                      <a class="the-cong-cu" href="#muc-tieu" onclick="moTrang('muc-tieu'); return false;"><span class="o-bieu-tuong mau-cam" aria-hidden="true">◎</span><span><strong>Mục tiêu GPA</strong><small>Biết mình cần cố gắng bao nhiêu.</small></span><b aria-hidden="true">→</b></a>
+                  </div>
+              </section>
+
+              <section id="tinh-gpa" class="trang">
+                  <div id="dau-trang-tinh" class="dau-trang">
+                      <div><p class="dong-nho">GÓC HỌC TẬP CỦA BẠN</p><h1>Tính GPA học kỳ</h1><p>Mỗi môn học đều có trọng số. Cùng xem bức tranh học kỳ của bạn.</p></div>
+                      <button type="button" class="nut-phu" onclick="moLuuDuLieu()">Quản lý dữ liệu</button>
+                  </div>
+                  <div class="bo-cuc-tinh">
+                      <div class="cot-nhap">
+                          <div class="the-nhap">
+                              <div class="dau-the">
+                                  <div><h2 id="tieu-de-bang">Tính nhanh GPA của bạn</h2><p>Nhập điểm, bấm tính và hiểu rõ kết quả.</p></div>
+                                  <button type="button" class="nut-chu" onclick="duLieuMau()">Thử dữ liệu mẫu</button>
+                              </div>
+                              <div class="cai-dat">
+                                  <div><label for="ten-ky">Tên học kỳ</label><input id="ten-ky" type="text" value="Học kỳ 1" maxlength="100"></div>
+                                  <div><label for="he-diem">Kiểu nhập điểm</label><select id="he-diem" onchange="doiHeDiem()"><option value="4">Điểm hệ 4 (0–4)</option><option value="10">Điểm hệ 10 (0–10)</option><option value="chu">Điểm chữ (A+, A, B+, B, C+, C, D+, D, F)</option></select></div>
+                              </div>
+                              <p class="cau-hinh">Thang điểm: <a href="#thang-diem" onclick="moTrang('thang-diem'); return false;">A+ / A / B+ / B / C+ / C / D+ / D / F</a><span class="nhan">Mẫu tham khảo</span></p>
+                              <div class="vung-bang">
+                                  <table class="bang-mon">
+                                      <caption>Danh sách môn học</caption>
+                                      <thead><tr><th>Tính</th><th>Môn học</th><th>Tín chỉ</th><th>Điểm</th><th>Xóa</th></tr></thead>
+                                      <tbody id="danh-sach-mon"></tbody>
+                                  </table>
+                              </div>
+                              <div class="cuoi-bang">
+                                  <button type="button" class="nut-nhe" onclick="themMon()">+ Thêm môn học</button>
+                                  <button type="button" class="nut-chu" onclick="lamMoi()">Làm mới</button>
+                                  <p>Chấp nhận dấu phẩy thập phân.<br>Điểm F vẫn tính tín chỉ.</p>
+                              </div>
+                              <div class="hang-tinh"><p id="loi-mon" class="loi" role="alert"></p><button type="button" onclick="tinhGPA()">Tính GPA học kỳ <span aria-hidden="true">→</span></button></div>
+                          </div>
+                          <div class="loi-ich"><span>✓ Tính theo tín chỉ</span><span>✓ Nhập hệ 4, hệ 10 hoặc điểm chữ</span><span>✓ Không cần đăng nhập</span></div>
+                          <div class="cac-buoc"><div><span>01</span><p><strong>Chọn hệ điểm</strong><small>Đối chiếu quy chế trường.</small></p></div><div><span>02</span><p><strong>Nhập môn học</strong><small>Thêm tín chỉ và điểm.</small></p></div><div><span>03</span><p><strong>Xem kết quả</strong><small>Bấm tính để xem GPA.</small></p></div></div>
+                      </div>
+                      <aside class="cot-ket-qua">
+                          <div class="ket-qua" aria-live="polite">
+                              <h3>KẾT QUẢ HỌC KỲ</h3>
+                              <div class="vong-diem"><strong id="gpa-ky">—</strong><span>GPA / 4,00</span></div>
+                              <p id="xep-loai-ky" class="xep-loai">Chưa có kết quả</p>
+                              <div class="thong-ke"><div><strong id="tong-tin-chi">—</strong><span>Tín chỉ tính GPA</span></div><div><strong id="tong-so-mon">—</strong><span>Môn được tính</span></div></div>
+                              <p id="thong-tin-ky">Nhập điểm và bấm tính để xem kết quả.</p>
+                              <p id="diem-he-10"></p><p id="phep-tinh"></p>
+                          </div>
+                          <div class="meo-nho"><h3><span aria-hidden="true">☼</span> Một lưu ý nhỏ</h3><p>GPA được tính theo tín chỉ. Môn nhiều tín chỉ sẽ ảnh hưởng nhiều hơn đến kết quả.</p><a href="#huong-dan" onclick="moTrang('huong-dan'); return false;">Hiểu hơn về cách tính →</a></div>
+                      </aside>
+                  </div>
+                  <div class="luu-du-lieu the-noi-dung" id="luu-du-lieu">
+                      <h3>Lưu bài nhập của bạn</h3>
+                      <p class="ghi-chu">Bấm lưu để giữ danh sách môn và tên học kỳ trên trình duyệt này. Trang không tự lưu, không đồng bộ tài khoản.</p>
+                      <div class="nhom-nut"><button type="button" onclick="luuDuLieu()">Lưu học kỳ</button><button type="button" class="nut-phu" onclick="taiDuLieu()">Mở học kỳ đã lưu</button><button type="button" class="nut-phu" onclick="xoaDuLieu()">Xóa bản đã lưu</button></div>
+                      <p id="trang-thai-luu" class="ghi-chu" role="status"></p>
+                  </div>
+              </section>
+          <section id="tich-luy" class="trang the-noi-dung">
+              <p class="so-muc">02 / GPA TÍCH LŨY</p>
+              <h2>GPA cũ + học kỳ mới</h2>
+              <p>Nhập GPA hệ 4 và số tín chỉ tương ứng. Số tín chỉ dùng tính GPA có thể khác số tín chỉ đã đạt.</p>
+              <form onsubmit="tinhTichLuy(); return false;" novalidate>
+                  <div class="hai-cot">
+                      <div class="cot">
+                          <label for="gpa-cu">GPA tích lũy hiện tại</label>
+                          <input id="gpa-cu" type="text" inputmode="decimal" placeholder="Ví dụ: 3,0">
+                          <label for="tin-chi-cu">Tín chỉ đã dùng tính GPA cũ</label>
+                          <input id="tin-chi-cu" type="text" inputmode="decimal" placeholder="Ví dụ: 60">
+                      </div>
+                      <div class="cot">
+                          <label for="gpa-moi">GPA học kỳ mới</label>
+                          <input id="gpa-moi" type="text" inputmode="decimal" placeholder="Ví dụ: 3,8">
+                          <label for="tin-chi-moi">Tín chỉ tính GPA kỳ mới</label>
+                          <input id="tin-chi-moi" type="text" inputmode="decimal" placeholder="Ví dụ: 15">
+                      </div>
+                  </div>
+                  <label class="chon"><input type="checkbox" id="co-hoc-lai"> Kỳ mới có môn học lại thay thế điểm trong GPA cũ</label>
+                  <button type="submit">Tính GPA tích lũy</button>
+                  <p id="ket-qua-tich-luy" class="thong-bao" aria-live="polite">Kết quả sẽ hiển thị tại đây.</p>
+              </form>
+              <p class="ghi-chu">Công thức này chỉ cộng thêm tín chỉ mới. Không dùng khi cần thay thế điểm cũ của môn học lại. GPA cũ đã làm tròn có thể khiến kết quả chênh nhẹ.</p>
+          </section>
+
+          <section id="muc-tieu" class="trang the-noi-dung">
+              <p class="so-muc">03 / MỤC TIÊU GPA</p>
+              <h2>Bạn cần đạt bao nhiêu điểm?</h2>
+              <form onsubmit="tinhMucTieu(); return false;" novalidate>
+                  <div class="hai-cot">
+                      <div class="cot">
+                          <label for="gpa-hien-tai">GPA hiện tại (hệ 4)</label>
+                          <input id="gpa-hien-tai" type="text" inputmode="decimal" placeholder="Ví dụ: 3,0">
+                          <label for="tin-chi-hien-tai">Tín chỉ đang tính trong GPA</label>
+                          <input id="tin-chi-hien-tai" type="text" inputmode="decimal" placeholder="Ví dụ: 60">
+                      </div>
+                      <div class="cot">
+                          <label for="gpa-muc-tieu">GPA mục tiêu (hệ 4)</label>
+                          <input id="gpa-muc-tieu" type="text" inputmode="decimal" placeholder="Ví dụ: 3,2">
+                          <label for="tin-chi-con-lai">Tín chỉ còn lại dự kiến</label>
+                          <input id="tin-chi-con-lai" type="text" inputmode="decimal" placeholder="Ví dụ: 60">
+                      </div>
+                  </div>
+                  <button type="submit">Tính điểm cần đạt</button>
+                  <p id="ket-qua-muc-tieu" class="thong-bao" aria-live="polite">Nhập thông tin để xem mục tiêu có khả thi không.</p>
+              </form>
+              <p class="ghi-chu">Giả định tín chỉ mới được cộng thêm, không thay thế điểm học lại. GPA hiện tại cao hơn mục tiêu chưa bảo đảm kết quả cuối. Xếp loại tốt nghiệp còn phụ thuộc quy chế trường.</p>
+          </section>
+
+          <section id="thang-diem" class="trang the-noi-dung">
+              <p class="so-muc">04 / THANG ĐIỂM</p>
+              <h2>Hiểu cách tính GPA</h2>
+              <p class="cong-thuc">GPA = Tổng (điểm môn × tín chỉ) / Tổng tín chỉ được tính</p>
+              <p>Ví dụ: môn 3 tín chỉ đạt 4,0 và môn 2 tín chỉ đạt 3,0 cho GPA = (3 × 4 + 2 × 3) / 5 = <strong>3,60</strong>.</p>
+              <p class="luu-y">Bảng quy đổi hệ 10 – điểm chữ – hệ 4 dưới đây là mẫu tham khảo theo thang điểm được cung cấp; không mặc định áp dụng cho mọi trường.</p>
+              <div class="hai-cot">
+                  <div class="cot">
+                      <h3>Quy đổi điểm từng môn</h3>
+                      <table>
+                          <thead><tr><th>Hệ 10</th><th>Điểm chữ</th><th>Hệ 4</th></tr></thead>
+                          <tbody>
+                              <tr><td>Từ 9,0 đến 10</td><td>A+</td><td>4,0</td></tr>
+                              <tr><td>Từ 8,5 đến dưới 9,0</td><td>A</td><td>4,0</td></tr>
+                              <tr><td>Từ 8,0 đến dưới 8,5</td><td>B+</td><td>3,5</td></tr>
+                              <tr><td>Từ 7,0 đến dưới 8,0</td><td>B</td><td>3,0</td></tr>
+                              <tr><td>Từ 6,5 đến dưới 7,0</td><td>C+</td><td>2,5</td></tr>
+                              <tr><td>Từ 5,5 đến dưới 6,5</td><td>C</td><td>2,0</td></tr>
+                              <tr><td>Từ 5,0 đến dưới 5,5</td><td>D+</td><td>1,5</td></tr>
+                              <tr><td>Từ 4,0 đến dưới 5,0</td><td>D</td><td>1,0</td></tr>
+                              <tr><td>Dưới 4,0</td><td>F</td><td>0,0</td></tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="cot">
+                      <h3>Xếp loại GPA</h3>
+                      <table>
+                          <thead><tr><th>GPA hệ 4</th><th>Xếp loại</th></tr></thead>
+                          <tbody>
+                              <tr><td>3,60 đến 4,00</td><td>Xuất sắc</td></tr>
+                              <tr><td>3,20 đến dưới 3,60</td><td>Giỏi</td></tr>
+                              <tr><td>2,50 đến dưới 3,20</td><td>Khá</td></tr>
+                              <tr><td>2,00 đến dưới 2,50</td><td>Trung bình</td></tr>
+                              <tr><td>1,00 đến dưới 2,00</td><td>Yếu</td></tr>
+                              <tr><td>Dưới 1,00</td><td>Kém</td></tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+              <p class="ghi-chu">Quy đổi từng môn trước khi tính bình quân. Không đổi trực tiếp GPA hệ 10 sang hệ 4 bằng một tỷ lệ cố định. Xếp loại dùng GPA chưa làm tròn.</p>
+          </section>
+
+          <section id="huong-dan" class="trang the-noi-dung">
+              <p class="so-muc">05 / HƯỚNG DẪN</p>
+              <h2>Bắt đầu trong ba bước</h2>
+              <ol>
+                  <li>Chọn kiểu nhập điểm (hệ 4, hệ 10 hoặc điểm chữ A+, A, B+, B, C+, C, D+, D, F) và đối chiếu thang điểm mẫu với quy chế trường.</li>
+                  <li>Nhập tín chỉ, điểm và chọn những môn được tính GPA.</li>
+                  <li>Bấm tính để xem kết quả; bấm lưu nếu muốn giữ lại học kỳ.</li>
+              </ol>
+              <h3>Môn nhiều tín chỉ ảnh hưởng thế nào?</h3>
+              <p>Môn 4 tín chỉ có trọng số gấp đôi môn 2 tín chỉ. GPA tích lũy cũng được tính theo tín chỉ, không lấy trung bình cộng của các GPA học kỳ.</p>
+              <h3>Điểm F và môn không tính GPA</h3>
+              <p>F tương ứng 0 điểm nhưng vẫn tính tín chỉ trong mẫu số. Với GDTC, GDQP-AN hoặc môn đạt/không đạt, hãy kiểm tra quy chế rồi bỏ chọn nếu môn đó không tính GPA. Công cụ không tự loại môn theo tên.</p>
+              <h3>Môn học lại và học cải thiện</h3>
+              <p>Bản đơn giản không tự nhận diện môn học lại. Nếu trường lấy điểm mới nhất hoặc cao nhất, chỉ chọn lần học được công nhận; bỏ chọn lần còn lại. Nếu trường tính tất cả, giữ cả hai.</p>
+              <h3>Dữ liệu được lưu ở đâu?</h3>
+              <p>Nút “Lưu học kỳ” lưu một danh sách môn trong trình duyệt bằng localStorage. Bấm “Mở học kỳ đã lưu” để khôi phục. Dữ liệu có thể mất khi xóa dữ liệu trình duyệt; các ô GPA tích lũy, mục tiêu và góp ý không được lưu.</p>
+          </section>
+
+          <section id="gop-y" class="trang the-noi-dung">
+              <p class="so-muc">06 / GÓP Ý</p>
+              <h2>Góp ý cho GPA Uni</h2>
+              <p>Biểu mẫu chưa có dịch vụ gửi trực tuyến. Bạn có thể tạo nội dung rồi chọn và sao chép thủ công.</p>
+              <form onsubmit="taoGopY(); return false;">
+                  <label for="ho-ten">Họ tên (tùy chọn)</label>
+                  <input id="ho-ten" type="text" maxlength="100">
+                  <label for="tieu-de">Tiêu đề</label>
+                  <input id="tieu-de" type="text" required maxlength="150">
+                  <label for="noi-dung">Nội dung</label>
+                  <textarea id="noi-dung" rows="4" required maxlength="2000"></textarea>
+                  <button type="submit">Tạo nội dung để sao chép</button>
+                  <label for="ban-gop-y">Nội dung đã soạn — chưa gửi trực tuyến</label>
+                  <textarea id="ban-gop-y" rows="5" readonly></textarea>
+                  <p id="trang-thai-gop-y" class="ghi-chu" role="status"></p>
+              </form>
+          </section>
+          </main>
+          <footer><span>Một chút rõ ràng cho hành trình đại học của bạn.</span><a href="#thang-diem" onclick="moTrang('thang-diem'); return false;">Thang điểm mẫu tham khảo</a></footer>
+      </div>
+    <noscript><p>Hãy bật JavaScript để sử dụng chức năng tính điểm.</p></noscript>
+    <script src="gpa-uni.js"></script>
+    <script src="auth.js"></script>
+  </body>
+  </html>
