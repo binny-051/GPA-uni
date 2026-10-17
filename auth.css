@@ -204,7 +204,6 @@ input[type="reset"].nut-reset {
     font-size: 13px;
 }
 
-/* Thiết kế Web đáp ứng (Responsive) cho màn hình nhỏ */
 @media (max-width: 600px) {
     .the-auth {
         padding: 22px 16px;
