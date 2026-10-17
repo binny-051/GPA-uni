@@ -13,6 +13,7 @@
   </head>
   <body>
       <aside class="thanh-ben" id="thanh-ben">
+          <button type="button" class="nut-dong-menu" onclick="dongMenuDiDong()" aria-label="Đóng menu điều hướng">✕</button>
           <a class="thuong-hieu" href="#trang-chu" onclick="moTrang('trang-chu'); return false;">
               <span class="logo-hinh" aria-hidden="true">G</span>
               <span><strong>GPA <b>Uni</b></strong><small>ĐIỂM SỐ LÀ CHUYỆN NHỎ <br> MỤC TIÊU LÀ PHẢI LỚN.</small></span>
@@ -35,9 +36,10 @@
                   <p>Lưu học kỳ trên thiết bị.<br>Không cần tài khoản để bắt đầu.</p>
                   <a href="#luu-du-lieu" onclick="moLuuDuLieu(); return false;">Quản lý dữ liệu →</a>
               </div>
-              <p class="ban-quyen">GPA Uni ©</p>
+              <p class="ban-quyen">GPA Uni © 2026 <span>Bản cơ bản</span></p>
           </div>
       </aside>
+      <div id="lop-phu-menu" class="lop-phu-menu" onclick="dongMenuDiDong()" aria-hidden="true"></div>
 
       <div class="khung-trang">
           <header class="thanh-tren">
@@ -135,6 +137,51 @@
               <p class="so-muc">02 / GPA TÍCH LŨY</p>
               <h2>GPA cũ + học kỳ mới</h2>
               <p>Nhập GPA hệ 4 và số tín chỉ tương ứng. Số tín chỉ dùng tính GPA có thể khác số tín chỉ đã đạt.</p>
+
+              <div class="the-bieu-do-tich-luy">
+                  <div class="dau-bieu-do-tich-luy">
+                      <div>
+                          <h3>Biểu đồ tiến trình GPA tích lũy</h3>
+                          <p>Theo dõi trực quan xu hướng điểm trung bình tích lũy qua các học kỳ.</p>
+                      </div>
+                      <button type="button" class="nut-chu" onclick="napDuLieuBieuDoMau()">Thử dữ liệu biểu đồ mẫu</button>
+                  </div>
+
+                  <div class="khung-svg-tich-luy">
+                      <svg id="bieu-do-gpa-svg" viewBox="0 0 600 220" role="img" aria-label="Biểu đồ tiến trình GPA tích lũy qua các học kỳ"></svg>
+                  </div>
+
+                  <div class="chan-bieu-do-tich-luy">
+                      <div class="khoi-diem-trung-tam">
+                          <div class="dong-diem-lon">
+                              <strong id="so-gpa-tich-luy-lon">3,32</strong>
+                              <span class="tren-bon">/ 4,0</span>
+                          </div>
+                          <span class="nhan-gpa-tich-luy">GPA TÍCH LŨY</span>
+                          <span id="chenh-lech-gpa-tich-luy" class="nhan-chenh-lech">Xuất phát vững vàng</span>
+                      </div>
+                      <span class="nhan-thang-diem">↻ Thang 4.0</span>
+                  </div>
+
+                  <div class="bo-sung-moc-bieu-do">
+                      <div class="nhap-moc-nhanh">
+                          <div>
+                              <label for="ten-moc-ky">Tên mốc học kỳ</label>
+                              <input id="ten-moc-ky" type="text" maxlength="25" placeholder="Ví dụ: HK1 25-26">
+                          </div>
+                          <div>
+                              <label for="diem-moc-ky">GPA tích lũy mốc (0–4)</label>
+                              <input id="diem-moc-ky" type="text" inputmode="decimal" maxlength="6" placeholder="Ví dụ: 3,45">
+                          </div>
+                          <div class="cum-nut-moc">
+                              <button type="button" class="nut-nhe" onclick="themMocBieuDo()">+ Thêm mốc vào biểu đồ</button>
+                              <button type="button" class="nut-phu" onclick="xoaMocCuoiBieuDo()">Xóa mốc cuối</button>
+                          </div>
+                      </div>
+                      <p id="thong-bao-bieu-do" class="ghi-chu-bieu-do" role="status"></p>
+                  </div>
+              </div>
+
               <form onsubmit="tinhTichLuy(); return false;" novalidate>
                   <div class="hai-cot">
                       <div class="cot">
@@ -244,17 +291,21 @@
           <section id="gop-y" class="trang the-noi-dung">
               <p class="so-muc">06 / GÓP Ý</p>
               <h2>Góp ý cho GPA Uni</h2>
-              <p>Biểu mẫu chưa có dịch vụ gửi trực tuyến. Bạn có thể tạo nội dung rồi chọn và sao chép thủ công.</p>
-              <form onsubmit="taoGopY(); return false;">
+              <p>Bạn có thể gửi góp ý, báo lỗi hoặc đề xuất tính năng trực tiếp tới email quản trị viên <a href="mailto:ducanh05012k6@gmail.com"><strong>ducanh05012k6@gmail.com</strong></a> bằng ứng dụng Email, mở nhanh Gmail trên Web hoặc sao chép nội dung bên dưới.</p>
+              <form onsubmit="taoGopY(); return false;" novalidate>
                   <label for="ho-ten">Họ tên (tùy chọn)</label>
-                  <input id="ho-ten" type="text" maxlength="100">
+                  <input id="ho-ten" type="text" maxlength="100" placeholder="Nhập họ tên của bạn">
                   <label for="tieu-de">Tiêu đề</label>
-                  <input id="tieu-de" type="text" required maxlength="150">
+                  <input id="tieu-de" type="text" required maxlength="150" placeholder="Ví dụ: Đề xuất thêm thang điểm trường...">
                   <label for="noi-dung">Nội dung</label>
-                  <textarea id="noi-dung" rows="4" required maxlength="2000"></textarea>
-                  <button type="submit">Tạo nội dung để sao chép</button>
-                  <label for="ban-gop-y">Nội dung đã soạn — chưa gửi trực tuyến</label>
-                  <textarea id="ban-gop-y" rows="5" readonly></textarea>
+                  <textarea id="noi-dung" rows="4" required maxlength="2000" placeholder="Mô tả chi tiết góp ý hoặc vấn đề bạn gặp phải..."></textarea>
+                  <div class="nhom-nut nhom-nut-gop-y">
+                      <button type="submit">Gửi qua ứng dụng Email (mailto)</button>
+                      <button type="button" class="nut-phu" onclick="guiQuaGmailWeb()">Mở nhanh bằng Gmail trên Web ↗</button>
+                      <button type="button" class="nut-phu" onclick="saoChepGopY()">Sao chép nội dung</button>
+                  </div>
+                  <label for="ban-gop-y">Nội dung thư góp ý (tự động tạo khi gửi hoặc sao chép)</label>
+                  <textarea id="ban-gop-y" rows="6" readonly></textarea>
                   <p id="trang-thai-gop-y" class="ghi-chu" role="status"></p>
               </form>
           </section>
