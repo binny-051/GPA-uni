@@ -25,7 +25,7 @@ h1, h2, h3, p {
 }
 
 h1 {
-    font-size: 27px;
+    font-size: 30px;
     line-height: 1.45;
     letter-spacing: -0.6px;
 }
@@ -83,7 +83,7 @@ button:focus, a:focus, input:focus, select:focus, textarea:focus {
 
 .thuong-hieu strong {
     display: block;
-    font-size: 27px;
+    font-size: 30px;
     line-height: 1.3;
     letter-spacing: -1px;
 }
@@ -115,7 +115,7 @@ button:focus, a:focus, input:focus, select:focus, textarea:focus {
 .nhan-menu {
     margin: 39px 13px 13px;
     color: #7b879b;
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 1.3px;
     font-weight: bold;
 }
@@ -128,7 +128,7 @@ nav a {
     margin-bottom: 5px;
     border-radius: 8px;
     color: #5b6578;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 nav a:hover {
@@ -298,7 +298,7 @@ main:focus {
 
 .loi-chao h1 {
     margin: 12px 0 14px;
-    font-size: 27px;
+    font-size: 31px;
 }
 
 .loi-chao h1 span {
@@ -1051,6 +1051,211 @@ li {
     margin-bottom: 22px;
 }
 
+.nhom-nut-gop-y {
+    margin: 4px 0 20px;
+}
+
+#gop-y .nhom-nut-gop-y button {
+    margin-bottom: 0;
+}
+
+/* Lớp phủ mờ & khóa cuộn trang trên thiết bị di động */
+body.khoa-cuon-trang {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.lop-phu-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 90;
+}
+
+.nut-dong-menu {
+    display: none;
+}
+
+/* Thẻ biểu đồ GPA tích lũy */
+.the-bieu-do-tich-luy {
+    margin: 18px 0 26px;
+    padding: 22px 24px;
+    background-color: #ffffff;
+    border: 1px solid #e5e9f1;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.dau-bieu-do-tich-luy {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.dau-bieu-do-tich-luy h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #0f172a;
+}
+
+.dau-bieu-do-tich-luy p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.khung-svg-tich-luy {
+    width: 100%;
+    padding: 12px 10px 6px;
+    background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+    border: 1px solid #eef2ff;
+    border-radius: 12px;
+}
+
+#bieu-do-gpa-svg {
+    width: 100%;
+    height: auto;
+    max-height: 230px;
+    display: block;
+    overflow: visible;
+}
+
+.chan-bieu-do-tich-luy {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0 14px;
+    margin-top: 6px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.khoi-diem-trung-tam {
+    text-align: center;
+}
+
+.dong-diem-lon {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+#so-gpa-tich-luy-lon {
+    font-size: 34px;
+    font-weight: bold;
+    color: #0f172a;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+}
+
+.tren-bon {
+    font-size: 15px;
+    font-weight: bold;
+    color: #64748b;
+    margin-left: 4px;
+}
+
+.nhan-gpa-tich-luy {
+    display: block;
+    margin-top: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.nhan-chenh-lech {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #eef2ff;
+    color: #4f46e5;
+}
+
+.nhan-chenh-lech.tang {
+    background-color: #ecfdf5;
+    color: #047857;
+}
+
+.nhan-chenh-lech.giam {
+    background-color: #fffbeb;
+    color: #b45309;
+}
+
+.nhan-thang-diem {
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 32px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid #dce2ec;
+    background-color: #ffffff;
+    color: #334155;
+    font-size: 11px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.nhan-thang-diem:hover {
+    background-color: #eef2ff;
+    border-color: #a5b4fc;
+    color: #4f46e5;
+}
+
+.bo-sung-moc-bieu-do {
+    padding-top: 14px;
+}
+
+.nhap-moc-nhanh {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.nhap-moc-nhanh > div {
+    flex: 1;
+    min-width: 140px;
+}
+
+.nhap-moc-nhanh input {
+    margin-bottom: 0;
+}
+
+.cum-nut-moc {
+    display: flex;
+    gap: 8px;
+    flex: 1.2;
+    min-width: 220px;
+}
+
+.cum-nut-moc button {
+    flex: 1;
+    white-space: nowrap;
+}
+
+.ghi-chu-bieu-do {
+    font-size: 11px;
+    color: #64748b;
+    margin: 8px 0 0;
+}
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -1215,18 +1420,51 @@ footer a {
 }
 
 @media (max-width: 760px) {
+    .lop-phu-menu.hien-lop-phu {
+        display: block;
+    }
+
     .thanh-ben {
         display: none;
-        position: absolute;
-        top: 62px;
-        bottom: auto;
-        min-height: 560px;
-        width: 245px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 270px;
+        z-index: 100;
+        overflow-y: auto;
+        box-shadow: 8px 0 24px rgba(15, 23, 42, 0.25);
         border-bottom: 1px solid #e5e9f1;
     }
 
     .thanh-ben.menu-mo {
         display: flex;
+    }
+
+    .nut-dong-menu {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 14px;
+        right: 12px;
+        width: 32px;
+        height: 32px;
+        min-height: 32px;
+        padding: 0;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        background-color: #f8fafc;
+        color: #475569;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .nut-dong-menu:hover {
+        background-color: #fee2e2;
+        border-color: #fca5a5;
+        color: #b91c1c;
     }
 
     .khung-trang {
@@ -1399,6 +1637,39 @@ footer a {
 
     .the-noi-dung > h2 {
         font-size: 22px;
+    }
+
+    .the-bieu-do-tich-luy {
+        padding: 16px 14px;
+    }
+
+    .dau-bieu-do-tich-luy {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .chan-bieu-do-tich-luy {
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px 0 12px;
+    }
+
+    .nhan-thang-diem {
+        position: static;
+    }
+
+    #so-gpa-tich-luy-lon {
+        font-size: 30px;
+    }
+
+    .nhap-moc-nhanh {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cum-nut-moc {
+        min-width: 0;
+        flex-direction: column;
     }
 
     .cac-buoc {
