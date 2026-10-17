@@ -155,12 +155,12 @@
                       <div class="khoi-diem-trung-tam">
                           <div class="dong-diem-lon">
                               <strong id="so-gpa-tich-luy-lon">3,32</strong>
-                              <span class="tren-bon">/ 4,0</span>
+                              <span id="mau-so-thang-bieu-do" class="tren-bon">/ 4,0</span>
                           </div>
                           <span class="nhan-gpa-tich-luy">GPA TÍCH LŨY</span>
                           <span id="chenh-lech-gpa-tich-luy" class="nhan-chenh-lech">Xuất phát vững vàng</span>
                       </div>
-                      <span class="nhan-thang-diem">↻ Thang 4.0</span>
+                      <button type="button" id="nut-doi-thang-bieu-do" class="nhan-thang-diem" onclick="doiThangBieuDoTichLuy()" title="Bấm để chuyển đổi hiển thị giữa Thang 4.0 và Thang 10.0">↻ Thang 4.0</button>
                   </div>
 
                   <div class="bo-sung-moc-bieu-do">
@@ -170,7 +170,7 @@
                               <input id="ten-moc-ky" type="text" maxlength="25" placeholder="Ví dụ: HK1 25-26">
                           </div>
                           <div>
-                              <label for="diem-moc-ky">GPA tích lũy mốc (0–4)</label>
+                              <label id="nhan-diem-moc-ky" for="diem-moc-ky">GPA tích lũy mốc (0–4)</label>
                               <input id="diem-moc-ky" type="text" inputmode="decimal" maxlength="6" placeholder="Ví dụ: 3,45">
                           </div>
                           <div class="cum-nut-moc">
@@ -300,7 +300,7 @@
                   <label for="noi-dung">Nội dung</label>
                   <textarea id="noi-dung" rows="4" required maxlength="2000" placeholder="Mô tả chi tiết góp ý hoặc vấn đề bạn gặp phải..."></textarea>
                   <div class="nhom-nut nhom-nut-gop-y">
-                      <button type="submit">Gửi qua ứng dụng Email (mailto)</button>
+                      <button type="submit">Gửi qua Email</button>
                       <button type="button" class="nut-phu" onclick="guiQuaGmailWeb()">Mở nhanh bằng Gmail trên Web ↗</button>
                       <button type="button" class="nut-phu" onclick="saoChepGopY()">Sao chép nội dung</button>
                   </div>
