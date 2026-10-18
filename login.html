@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đăng nhập tài khoản GPA Uni - Tính điểm GPA cho sinh viên">
+    <meta name="keywords" content="GPA Uni, đăng nhập, tính điểm GPA, sinh viên">
+    <title>Đăng nhập — GPA Uni</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="webmanifest.json">
+</head>
+<body class="trang-auth">
+    <main class="khung-auth">
+        <section class="the-auth the-noi-dung">
+            <header class="dau-auth">
+                <a class="thuong-hieu thuong-hieu-auth" href="index.html" title="Quay về Trang chủ GPA Uni">
+                    <span class="logo-hinh" aria-hidden="true">G</span>
+                    <span>
+                        <strong>GPA <b>Uni</b></strong>
+                        <small>ĐIỂM SỐ LÀ CHUYỆN NHỎ <br> MỤC TIÊU LÀ PHẢI LỚN.</small>
+                    </span>
+                </a>
+                <p class="dong-nho">TÀI KHOẢN HỌC TẬP</p>
+                <h1>Đăng nhập GPA Uni</h1>
+                <p>Đăng nhập để quản lý và lưu trữ bảng điểm học kỳ theo tài khoản cá nhân của bạn.</p>
+            </header>
+
+            <p id="thong-bao-auth" class="hop-thong-bao" role="status" aria-live="polite"></p>
+
+            <form id="form-dang-nhap" action="#" method="post" onsubmit="xuLyDangNhap(); return false;" novalidate>
+                <fieldset class="nhom-truong">
+                    <legend>Thông tin đăng nhập</legend>
+
+                    <div class="o-nhap">
+                        <label for="email-dang-nhap">E-mail sinh viên</label>
+                        <input id="email-dang-nhap" name="email" type="email" placeholder="Ví dụ: msv@st.neu.edu.vn" maxlength="100" autocomplete="email" autofocus required>
+                        <span id="loi-email-dang-nhap" class="loi" role="alert"></span>
+                    </div>
+
+                    <div class="o-nhap">
+                        <label for="mat-khau-dang-nhap">Mật khẩu</label>
+                        <div class="khung-mat-khau">
+                            <input id="mat-khau-dang-nhap" name="password" type="password" placeholder="Nhập mật khẩu của bạn" maxlength="50" autocomplete="current-password" required>
+                            <button type="button" class="nut-phu nut-hien-mk" onclick="doiHienMatKhau('mat-khau-dang-nhap', this)" aria-label="Hiện hoặc ẩn mật khẩu">Hiện</button>
+                        </div>
+                        <span id="loi-mat-khau-dang-nhap" class="loi" role="alert"></span>
+                    </div>
+
+                    <div class="hang-tuy-chon">
+                        <label class="chon" for="ghi-nho">
+                            <input type="checkbox" id="ghi-nho" name="remember" checked>
+                            Duy trì trạng thái đăng nhập trên trình duyệt này
+                        </label>
+                    </div>
+
+                    <div class="nhom-nut-auth">
+                        <button type="submit" id="nut-dang-nhap" class="nut-day">Đăng nhập vào góc học tập <span aria-hidden="true">→</span></button>
+                    </div>
+                </fieldset>
+            </form>
+
+            <footer class="chan-auth">
+                <p>Bạn chưa có tài khoản? <a href="register.html"><strong>Đăng ký tài khoản mới</strong></a></p>
+                <p><a href="index.html">← Quay về trang tính điểm GPA Uni</a></p>
+            </footer>
+        </section>
+    </main>
+
+    <noscript><p>Hãy bật JavaScript để sử dụng chức năng đăng nhập.</p></noscript>
+    <script src="auth.js"></script>
+</body>
+</html>
